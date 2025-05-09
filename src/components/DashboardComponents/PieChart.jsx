@@ -1,4 +1,3 @@
-// components/PieChartComponent.jsx
 import React from 'react';
 import {
   PieChart,
@@ -19,7 +18,14 @@ const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444']; // Blue, Green, Yel
 
 const PieChartComponent = () => {
   return (
-    <div className="w-full h-96 bg-customBlue p-4 rounded-lg shadow-md">
+    <div className="relative w-full h-96 bg-lightGray p-4 rounded-lg shadow-md">
+      {/* Centered Heading */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="text-white text-sm font-semibold text-center leading-tight">
+          Ad Format<br />Distribution
+        </div>
+      </div>
+
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie

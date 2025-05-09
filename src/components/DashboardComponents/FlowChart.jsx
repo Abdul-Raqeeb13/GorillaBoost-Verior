@@ -4,6 +4,7 @@ import {
 } from 'recharts';
 import { format } from 'date-fns'; // Import date-fns for date formatting
 import BelowHeader from '../BelowHeader';
+import { SlCalender } from "react-icons/sl";
 
 // Static data with dates and values between 0 to 3
 const staticData = [
@@ -29,16 +30,19 @@ const FlowChart = () => {
   }));
 
   return (
-    <div className="w-full h-96 bg-customBlue p-4 rounded-lg shadow-md">
-        <BelowHeader
-                    title="Job Listings"
-                    subtitle="Filter based on your preferences"
-                    icon = ""
-                    btnName = "Monthly"
-                    color = "bg-customBlue"
-                      px = "px-5"
-                    py = "py-5"
-                />
+    <div className="w-full h-96 bg-lightGray p-4 rounded-lg shadow-md">
+         <BelowHeader
+  title="Job Listings"
+  subtitle="Filter based on your preferences"
+  btnName="Monthly"
+  icon={<SlCalender />}
+  options={[
+    { label: "Yearly", value: "yearly" },
+    { label: "Monthly", value: "monthly" },
+    { label: "Daily", value: "daily" },
+  ]}
+  onSelectOption={(option) => console.log("Selected:", option)}
+/>
       <ResponsiveContainer width="100%" height="70%">
         <LineChart data={formattedData}>
           <CartesianGrid strokeDasharray="3 3" />

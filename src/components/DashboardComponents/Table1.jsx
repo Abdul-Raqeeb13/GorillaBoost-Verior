@@ -1,5 +1,7 @@
 import React from 'react';
 import BelowHeader from '../BelowHeader';
+import { SlCalender } from "react-icons/sl";
+
 
 function Table1() {
   const data = [
@@ -33,20 +35,25 @@ function Table1() {
   ];
 
   return (
-    <div className="w-full bg-customBlue rounded-lg shadow-md overflow-hidden">
-      <BelowHeader
-        title="Best Performing Ads"
-        subtitle="Top-Performing Ads by Engagement & ROI."
-        icon=""
-        btnName="Filter"
-        color="bg-customBlue"
-        px="px-5"
-        py="py-3"
-      />
+    <div className="w-full bg-lightGray py-3 px-1 rounded-lg shadow-md overflow-hidden">
+        <BelowHeader
+  title="Best Performing ADs"
+  subtitle="Top-Performing Ads by Engagement & ROI"
+  btnName="Monthly"
+  icon={<SlCalender />}
+  options={[
+    { label: "Yearly", value: "yearly" },
+    { label: "Monthly", value: "monthly" },
+    { label: "Daily", value: "daily" },
+  ]}
+  onSelectOption={(option) => console.log("Selected:", option)}
+/>
+
+
       {/* Wrapping the table with a container that adjusts without overflow */}
       <div className="w-full max-w-full">
         <table className="w-full table-auto text-xs"> {/* Small text size */}
-        <thead className="bg-customBlue text-gray-600 uppercase text-sm leading-normal">
+        <thead className=" text-white uppercase text-sm leading-normal">
             <tr>
               <th className="py-3 px-6 text-left">Ads</th>
               <th className="py-3 px-6 text-left">Impressions</th>
@@ -55,9 +62,9 @@ function Table1() {
               <th className="py-3 px-6 text-left">Status</th>
             </tr>
           </thead>
-          <tbody className="text-gray-700 text-xs">
+          <tbody className="text-white text-xs">
             {data.map((ad) => (
-              <tr key={ad.id} className="even:bg-customBlue odd:bg-tableRowColor">
+              <tr key={ad.id} className="even:bg-extraLightGray odd:bg-lightGray">
                 <td className="p-2 flex items-center gap-2">
                   <img src={ad.imgUrl} alt={ad.adName} className="w-8 h-8 rounded-lg border-b border-blue-gray-50" />
                   {ad.adName}

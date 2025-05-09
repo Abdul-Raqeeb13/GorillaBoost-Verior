@@ -1,21 +1,34 @@
+// App.jsx
+
+import DashboardLayout from "./DashBoardlayout";
+import Dashboard from "./pages/Dashboard";
+import BrandManagement from "./pages/BrandManagement";
+import BrandManagement2 from "./pages/BrandManagement2";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css'
-import Login from './components/login';
-import Otp from './components/otp';
-import Header from './components/Header';
-import Sidebar from "./components/CommonComponents/Sidebar"
-import Dashboard from './pages/Dashboard';
-function App() {
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Dashboard />
+      },
+      {
+        path: "/brandmanagement",
+        element: <BrandManagement />
+      },
+      {
+        path: "/brandmanagement/createbrand",
+        element: <BrandManagement2 />
+      },
+    ]
+  }
+]);
 
-  return (
-    <>
-     {/* <Login/> */}
-     {/* <Otp/>  */}
-     
-     {/* <Sidebar/>
-     <Header/> */}
-     <Dashboard/>
-    </>
-  )
-}
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
-export default App
+export default App;

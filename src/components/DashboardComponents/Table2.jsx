@@ -1,37 +1,45 @@
 import React from 'react';
 import BelowHeader from '../BelowHeader';
-
+import {SlCalender} from "react-icons/sl";
 const ProgressBar = ({ label, value }) => {
   const clampedValue = Math.min(Math.max(value, 0), 100); // Clamp between 0–100
 
   return (
-    <div className="mb-2 w-full">
-      <div className="flex justify-between mb-1">
-        <span className="text-sm font-medium text-gray-700">{label}</span>
-        <span className="text-sm font-semibold text-gray-900">{value}%</span>
-      </div>
-      <div className="w-full bg-progressBarBgColor rounded-full h-4 overflow-hidden">
+    <div className="mb-4 w-full relative">
+      <div className="w-full bg-commonBGColor rounded-md h-8 relative overflow-hidden flex items-center px-3">
+        {/* Label on the left */}
+        <span className="text-sm text-white font-medium absolute left-3 z-10">{label}</span>
+
+        {/* Filled progress bar */}
         <div
-          className={`bg-progressForegroundColor h-4 rounded-full`}
+          className="bg-redColor h-8 rounded-md transition-all duration-500 absolute top-0 left-0"
           style={{ width: `${clampedValue}%` }}
         ></div>
+
+        {/* Value on the right (outside fill) */}
+        <span className="text-sm text-white font-medium absolute right-3 z-10">{clampedValue}%</span>
       </div>
     </div>
   );
 };
 
+
+
 function Table2() {
   return (
-    <div className="w-full bg-customBlue rounded-lg shadow-md overflow-hidden">
+    <div className="w-full pt-5 bg-lightGray rounded-lg shadow-md overflow-hidden">
       <BelowHeader
-        title="Ad Fatigue Trends"
-        subtitle="Audience Engagement Decline."
-        icon=""
-        btnName="Monthly"
-        color="bg-customBlue"
-        px="px-5"
-        py="py-3"
-      />
+  title="Ad Fatigue Trends"
+  subtitle="Audience Engagement Decline."
+  btnName="Monthly"
+  icon={<SlCalender />}
+  options={[
+    { label: "Yearly", value: "yearly" },
+    { label: "Monthly", value: "monthly" },
+    { label: "Daily", value: "daily" },
+  ]}
+  onSelectOption={(option) => console.log("Selected:", option)}
+/>
 
       {/* Ad Fatigue Trends Box */}
       <div className="max-w-2xl mx-auto bg-customBlue rounded-lg shadow-md p-6">
