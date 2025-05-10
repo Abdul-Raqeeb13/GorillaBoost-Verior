@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import BelowHeader3 from "../components/BrandManagementComponents/BelowHeader3";
 import { GridView, TableView } from "../components/BrandManagementComponents/BMCard2";
-
+import Header from "../components/CommonComponents/Header";
 const BrandManagement2 = () => {
   const [activeView, setActiveView] = useState("grid"); // View toggle state
 
   return (
-    <div className="min-h-screen bg-commonBgColor p-4 sm:p-6">
-      <main className="bg-commonBgColor flex-grow">
+    <div className="min-h-screen bg-commonBgColor p-7">
+      <Header
+        title="Overview"
+        subtitle="Welcome to your dashboard"
+        profileImage="/assets/user.jpg"
+        onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} // pass the toggle function
+      />
+
+
         <BelowHeader3 activeView={activeView} setActiveView={setActiveView} />
 
         {/* Grid and Table Views */}
@@ -18,7 +25,6 @@ const BrandManagement2 = () => {
             <TableView />
           )}
         </div>
-      </main>
     </div>
   );
 };

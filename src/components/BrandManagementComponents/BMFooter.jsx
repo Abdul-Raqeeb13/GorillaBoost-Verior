@@ -35,7 +35,7 @@ function BMFooter() {
       <div className="w-full flex justify-end my-4">
         <button
           className="bg-redColor px-8 py-2 text-sm text-white rounded-md shadow-md"
-           onClick={() => navigate("/brandmanagement/createbrand")}
+           onClick={() => navigate("/seebrands")}
         >
           Create Brand
         </button>

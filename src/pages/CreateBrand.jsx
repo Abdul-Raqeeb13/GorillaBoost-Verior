@@ -3,10 +3,17 @@ import BelowHeader from "../components/BrandManagementComponents/BelowHeader";
 import BelowHeader2 from "../components/BrandManagementComponents/BelowHeader2";
 import BMCard from "../components/BrandManagementComponents/BMCard";
 import BMFooter from "../components/BrandManagementComponents/BMFooter";
-
+import Header from "../components/CommonComponents/Header";
 const BrandManagement = () => {
   return (
-    <div className="bg-commonBgColor min-h-screen px-5 flex flex-col">
+    <div className="bg-commonBgColor min-h-screen p-7 flex flex-col">
+
+      <Header
+        title="Overview"
+        subtitle="Welcome to your dashboard"
+        profileImage="/assets/user.jpg"
+        onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} // pass the toggle function
+      />
       {/* Below Header */}
       <BelowHeader
         image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-TB9d5YXwtKhv4NWbpeTBVveYvcxu9gMJng&s"
@@ -22,10 +29,10 @@ const BrandManagement = () => {
       </div>
 
       {/* Main Content */}
-      <main className="bg-commonBgColor flex-grow">
-        <BMCard />
-        <BMFooter />
-      </main>
+      {/* <main className="bg-commonBgColor flex-grow"> */}
+      <BMCard />
+      <BMFooter />
+      {/* </main> */}
     </div>
   );
 };

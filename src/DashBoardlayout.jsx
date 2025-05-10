@@ -19,12 +19,7 @@ function DashboardLayout() {
     ${isExpanded ? "lg:ml-[220px]" : "lg:ml-[72.75px]"}`}
       >
 
-       <Header
-  title="Overview"
-  subtitle="Welcome to your dashboard"
-  profileImage="/assets/user.jpg"
-  onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} // pass the toggle function
-/>
+
 
         <Outlet />
       </main>

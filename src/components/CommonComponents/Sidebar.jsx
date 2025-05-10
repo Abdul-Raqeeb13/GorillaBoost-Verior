@@ -45,17 +45,17 @@ function DefaultSidebar({ isExpanded, setIsExpanded }) {
           {isExpanded && <span className="ml-3 text-white text-sm">Dashboard</span>}
         </NavLink>
 
-        <NavLink to="/brandmanagement" className={getLinkClasses}>
+        <NavLink to="/createbrand" className={getLinkClasses}>
           <img src="/assets/Vector (9).svg" className="w-5 h-5" alt="Notifications" />
           {isExpanded && <span className="ml-3 text-white text-sm">Brand Management</span>}
         </NavLink>
 
-        <NavLink to="/menu2" className={getLinkClasses}>
+        <NavLink to="/generate" className={getLinkClasses}>
           <img src="/assets/Vector (2).svg" className="w-5 h-5" alt="Menu 2" />
-          {isExpanded && <span className="ml-3 text-white text-sm">Menu 2</span>}
+          {isExpanded && <span className="ml-3 text-white text-sm">Generate</span>}
         </NavLink>
 
-        <NavLink to="/menu3" className={getLinkClasses}>
+        <NavLink to="/insights" className={getLinkClasses}>
           <img src="/assets/Vector (3).svg" className="w-5 h-5" alt="Menu 3" />
           {isExpanded && <span className="ml-3 text-white text-sm">Menu 3</span>}
         </NavLink>

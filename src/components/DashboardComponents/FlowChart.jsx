@@ -30,7 +30,7 @@ const FlowChart = () => {
   }));
 
   return (
-    <div className="w-full h-96 bg-lightGray p-4 rounded-lg shadow-md">
+    <div className="w-full h-96 bg-lightGray p-5 rounded-lg shadow-md">
          <BelowHeader
   title="Job Listings"
   subtitle="Filter based on your preferences"
@@ -43,7 +43,7 @@ const FlowChart = () => {
   ]}
   onSelectOption={(option) => console.log("Selected:", option)}
 />
-      <ResponsiveContainer width="100%" height="70%">
+      <ResponsiveContainer className={"mt-5"} width="100%" height="70%">
         <LineChart data={formattedData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time" tick={{ fontSize: 12 }} />

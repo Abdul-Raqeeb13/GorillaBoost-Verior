@@ -37,6 +37,7 @@ module.exports = withMT({
         darkGreen : "#283D31",
         lightGreen : "#1F9254",
         darkRed : "#3C2626",
+        paraTextColor : "#9A9A9A"
       }
     },
   },

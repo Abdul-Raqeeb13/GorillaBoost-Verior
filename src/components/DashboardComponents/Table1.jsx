@@ -35,7 +35,7 @@ function Table1() {
   ];
 
   return (
-    <div className="w-full bg-lightGray py-3 px-1 rounded-lg shadow-md overflow-hidden">
+    <div className="w-full bg-lightGray p-3 rounded-lg shadow-md overflow-hidden">
         <BelowHeader
   title="Best Performing ADs"
   subtitle="Top-Performing Ads by Engagement & ROI"
@@ -51,7 +51,7 @@ function Table1() {
 
 
       {/* Wrapping the table with a container that adjusts without overflow */}
-      <div className="w-full max-w-full">
+      <div className="w-full max-w-full text-center mt-5">
         <table className="w-full table-auto text-xs"> {/* Small text size */}
         <thead className=" text-white uppercase text-sm leading-normal">
             <tr>

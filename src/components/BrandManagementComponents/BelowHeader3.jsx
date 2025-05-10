@@ -6,7 +6,7 @@ const Header = ({ activeView, setActiveView }) => {
   const handleListView = () => setActiveView("list");
 
   return (
-    <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 p-4 bg-commonBgColor rounded-lg shadow-md">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between  mt-5 bg-commonBgColor rounded-lg shadow-md">
       {/* Left Section */}
       <div className="flex flex-col">
         <h2 className="text-lg font-semibold text-white">List Of Brands</h2>

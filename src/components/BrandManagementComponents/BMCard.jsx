@@ -92,7 +92,7 @@ function BMCard() {
                         <img
                           src={selectedImage[card.id]}
                           alt="Uploaded"
-                          className="w-full h-48 rounded-md object-contain"
+                          className="w-full h-40 rounded-md object-contain"
                         />
                       </div>
                       <button

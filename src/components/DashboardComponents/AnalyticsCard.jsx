@@ -16,7 +16,7 @@ const AnalyticsCard = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap gap-4 pb-6 justify-center sm:justify-start">
+    <div className="flex flex-wrap gap-4 mt-5 justify-center sm:justify-start">
       {data.map((item, index) => (
         <Card
           key={index}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = ({ title, value, trend, icon, value2 , color, week}) => {
   return (
-    <div className="w-full sm:w-[48%] md:w-[32%] lg:w-[23%] h-[177px] rounded-2xl p-5 bg-lightGray flex flex-col justify-between shadow-xl transition-transform hover:scale-105">
+    <div className="w-full sm:w-[48%] md:w-[32%] lg:w-[23.91%] h-[177px] rounded-2xl p-5 bg-lightGray flex flex-col justify-between shadow-xl transition-transform hover:scale-105">
       <span className="text-sm py-2 px-3 rounded bg-extraLightGray text-white inline-block w-fit">{title}</span>
       <div className="text-3xl font-bold text-white">{value}</div>
       {trend && (

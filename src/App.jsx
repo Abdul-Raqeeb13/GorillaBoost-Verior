@@ -2,10 +2,12 @@
 
 import DashboardLayout from "./DashBoardlayout";
 import Dashboard from "./pages/Dashboard";
-import BrandManagement from "./pages/BrandManagement";
-import BrandManagement2 from "./pages/BrandManagement2";
+import CreateBrand from "./pages/CreateBrand";
+import SeeBrands from "./pages/SeeBrands";
+import Generate from "./pages/Generate";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css'
+import Insights from "./pages/Insights";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,12 +18,20 @@ const router = createBrowserRouter([
         element: <Dashboard />
       },
       {
-        path: "/brandmanagement",
-        element: <BrandManagement />
+        path: "/createbrand",
+        element: <CreateBrand />
       },
       {
-        path: "/brandmanagement/createbrand",
-        element: <BrandManagement2 />
+        path: "/seebrands",
+        element: <SeeBrands />
+      },
+      {
+        path: "/generate",
+        element: <Generate />
+      },
+      {
+        path: "/insights",
+        element: <Insights />
       },
     ]
   }

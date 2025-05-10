@@ -4,10 +4,10 @@ import { FiMenu } from "react-icons/fi";
 
 const Header = ({ title, subtitle, profileImage, onToggleSidebar }) => {
   return (
-    <header className="bg-commonBgColor text-white shadow-sm p-4 px-5 ps-9 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+    <header className="bg-commonBgColor text-white shadow-sm  flex flex-col sm:flex-row sm:justify-between sm:items-center ">
       
       {/* Left Section: Toggle (sm only) + Title */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center ">
         {/* Sidebar Toggle Button: show on small screens only */}
         <button
           className="lg:hidden p-2 rounded-md bg-extraLightGray text-white"
@@ -26,11 +26,13 @@ const Header = ({ title, subtitle, profileImage, onToggleSidebar }) => {
 
       {/* Right Section */}
       <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
-        <button className="p-2 rounded-full hover:bg-gray-100 text-white hover:text-black transition">
-          <FaSearch size={18} />
+        <button className="p-2 rounded-md bg-extraLightGray text-white ">
+          <FaSearch size={14} />
         </button>
 
-        <button className="w-full sm:w-auto px-4 py-2 bg-redColor text-white rounded-md text-sm">
+        <button className="w-full flex flex-row gap-2 sm:w-auto px-4 py-2 bg-redColor text-white rounded-md text-sm">
+                <img src="/assets/BtnIcon.svg" alt="" srcset="" />
+          
           Generate Now
         </button>
 

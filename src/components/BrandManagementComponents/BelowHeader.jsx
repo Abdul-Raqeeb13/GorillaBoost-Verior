@@ -3,7 +3,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 const Header = ({ image, title, subtitle, onClose }) => {
   return (
-    <div className="relative flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4 bg-commonBgColor w-full">
+    <div className="relative flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-commonBgColor w-full mt-5">
       {/* Image */}
       <img
         src={image}
@@ -20,7 +20,7 @@ const Header = ({ image, title, subtitle, onClose }) => {
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-2 right-2 sm:top-4 sm:right-4 flex items-center justify-center gap-1 text-sm sm:text-base bg-extraLightGray text-gray-500 hover:text-red-700 px-4 py-2 rounded-md"
+        className="absolute top-2 right-2 sm:top-4 sm:right-4 flex items-center justify-center gap-1 text-sm sm:text-base bg-extraLightGray text-gray-500 hover:text-red-700 w-32 h-8 rounded-md"
       >
         <span>Close</span>
         <IoCloseSharp size={16} />

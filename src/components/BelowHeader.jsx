@@ -5,8 +5,8 @@ const BelowHeader = ({
   subtitle,
   btnName = "Filter",
   color = "bg-cardColor",
-  px = "px-4",
-  py = "py-2",
+  px = "px-0",
+  py = "py-0",
   icon, // JSX icon
   options = [], // array of { label, value }
   onSelectOption = () => {} // callback
@@ -27,7 +27,7 @@ const BelowHeader = ({
 
   return (
     <header
-      className={`${color} shadow-sm text-white ${px} ${py} flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0`}
+      className={`${color} mt-5 shadow-sm text-white ${px} ${py} flex flex-col sm:flex-row sm:justify-between sm:items-center  sm:gap-0`}
     >
       {/* Left: Title & Subtitle */}
       <div>
@@ -39,7 +39,7 @@ const BelowHeader = ({
       <div className="relative" ref={dropdownRef}>
         <button
           onClick={() => setOpen(!open)}
-          className="flex items-center space-x-2 px-4 py-2 bg-customBlue text-white rounded-full bg-extraLightGray transition"
+          className="flex items-center space-x-2 px-4 py-2  text-white rounded-lg bg-extraLightGray"
         >
           {icon && <span className="w-5 h-5">{icon}</span>}
           <span className="text-sm font-medium">{btnName}</span>
