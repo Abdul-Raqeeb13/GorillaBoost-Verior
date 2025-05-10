@@ -8,6 +8,11 @@ import Generate from "./pages/Generate";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css'
 import Insights from "./pages/Insights";
+import InsightsLayout from "./components/InsightsComponents/InsightLayout";
+import CreativeInsights from "./pages/CreativeInsights";
+import CompetitorInsights from "./pages/competitorInsights";
+import CompetitorInsightsDashboard from "./pages/CompetitorInsightsDashboard";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,9 +34,15 @@ const router = createBrowserRouter([
         path: "/generate",
         element: <Generate />
       },
-      {
+     {
         path: "/insights",
-        element: <Insights />
+        element: <InsightsLayout />, // contains header + below header
+        children: [
+          { index: true, element: <Insights /> },
+          { path: "creativeinsights", element: <CreativeInsights/> },
+          { path: "competitorinsights", element: <CompetitorInsights/> },
+          { path: "dashboard", element: <CompetitorInsightsDashboard/> },
+        ],
       },
     ]
   }
