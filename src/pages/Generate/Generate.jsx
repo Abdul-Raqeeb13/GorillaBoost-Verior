@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/CommonComponents/Header'
-import BelowHeader from "../components/GenerateComponents/BelowHeader"
-import Card from "../components/GenerateComponents/Cards"
+import Header from '../../components/CommonComponents/Header'
+import BelowHeader from "../../components/GenerateComponents/BelowHeader"
+import Card from "../../components/GenerateComponents/Cards"
 function Generate() {
   return (
    <div className="min-h-screen bg-commonBgColor p-7">

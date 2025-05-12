@@ -1,8 +1,10 @@
 import { Input, Typography } from "@material-tailwind/react";
 import { FiGlobe } from "react-icons/fi";
 import Button from "../CommonComponents/Button";
+import { useNavigate } from "react-router-dom";
 
 function FooterCompetitorInsights() {
+   const navigate = useNavigate();
   return (
     <div className="flex flex-col lg:flex-row lg:items-center justify-between p-4 sm:p-6 gap-4 mt-5 bg-lightGray w-full rounded-md">
       
@@ -40,7 +42,7 @@ function FooterCompetitorInsights() {
           rounded="rounded-md"
           textColor="text-white"
           shadow="shadow-lg"
-          onClick={() => console.log("Button Clicked!")}
+          onClick={() => navigate("/insights/dashboard")}
         />
       </div>
     </div>

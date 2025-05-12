@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import BelowHeader3 from "../components/BrandManagementComponents/BelowHeader3";
-import { GridView, TableView } from "../components/BrandManagementComponents/BMCard2";
-import Header from "../components/CommonComponents/Header";
+import BelowHeader3 from "../../components/BrandManagementComponents/BelowHeader3";
+import { GridView, TableView } from "../../components/BrandManagementComponents/BMCard2";
+import Header from "../../components/CommonComponents/Header";
 const BrandManagement2 = () => {
   const [activeView, setActiveView] = useState("grid"); // View toggle state
 

@@ -1,9 +1,9 @@
 import React from "react";
-import BelowHeader from "../components/BrandManagementComponents/BelowHeader";
-import BelowHeader2 from "../components/BrandManagementComponents/BelowHeader2";
-import BMCard from "../components/BrandManagementComponents/BMCard";
-import BMFooter from "../components/BrandManagementComponents/BMFooter";
-import Header from "../components/CommonComponents/Header";
+import BelowHeader from "../../components/BrandManagementComponents/BelowHeader";
+import BelowHeader2 from "../../components/BrandManagementComponents/BelowHeader2";
+import BMCard from "../../components/BrandManagementComponents/BMCard";
+import BMFooter from "../../components/BrandManagementComponents/BMFooter";
+import Header from "../../components/CommonComponents/Header";
 const BrandManagement = () => {
   return (
     <div className="bg-commonBgColor min-h-screen p-7 flex flex-col">

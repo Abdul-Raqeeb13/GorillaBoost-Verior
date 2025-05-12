@@ -9,8 +9,8 @@ const ageGroups = [
 export default function AgeDistribution() {
   return (
     <div className="bg-lightGray text-white p-4 rounded-xl w-full">
-      <h2 className="text-lg mt-4">Age</h2>
-      <h2 className="text-sm mb-4">Based On User Feedback</h2>
+      <h2 className="text-2xl font-bold my-4">Age</h2>
+      <p className="text-sm mb-4">Based On User Feedback</p>
       {ageGroups.map((group, idx) => (
         <div key={idx} className="mb-2 flex items-center gap-2">
   <span className="w-12 text-sm">{group.age}</span>

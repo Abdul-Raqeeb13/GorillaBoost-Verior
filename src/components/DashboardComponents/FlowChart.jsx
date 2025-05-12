@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Area,
+  // defs,
 } from 'recharts';
-import { format } from 'date-fns'; // Import date-fns for date formatting
+import { format } from 'date-fns';
 import BelowHeader from '../BelowHeader';
 import { SlCalender } from "react-icons/sl";
 
-// Static data with dates and values between 0 to 3
 const staticData = [
   { time: '2025-05-01', value: 0.5 },
   { time: '2025-05-02', value: 1.2 },
@@ -20,36 +27,73 @@ const staticData = [
   { time: '2025-05-10', value: 0.7 },
 ];
 
-const FlowChart = () => {
-  const [data, setData] = useState(staticData);
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-gray-800 text-white text-xs px-3 py-2 rounded shadow-md">
+        <p className="font-semibold">{label}</p>
+        <p>Value: {payload[0].value}</p>
+      </div>
+    );
+  }
+  return null;
+};
 
-  // Format the date for the X-axis to display month and day
+const FlowChart = () => {
+  const [data] = useState(staticData);
+
   const formattedData = data.map(item => ({
     ...item,
-    time: format(new Date(item.time), 'MMM dd'), // Format as "Month Day" (e.g., "May 01")
+    time: format(new Date(item.time), 'MMM dd'),
   }));
 
   return (
     <div className="w-full h-96 bg-lightGray p-5 rounded-lg shadow-md">
-         <BelowHeader
-  title="Job Listings"
-  subtitle="Filter based on your preferences"
-  btnName="Monthly"
-  icon={<SlCalender />}
-  options={[
-    { label: "Yearly", value: "yearly" },
-    { label: "Monthly", value: "monthly" },
-    { label: "Daily", value: "daily" },
-  ]}
-  onSelectOption={(option) => console.log("Selected:", option)}
-/>
-      <ResponsiveContainer className={"mt-5"} width="100%" height="70%">
+      <BelowHeader
+        title="Job Listings"
+        subtitle="Filter based on your preferences"
+        btnName="Monthly"
+        icon={<SlCalender />}
+        options={[
+          { label: "Yearly", value: "yearly" },
+          { label: "Monthly", value: "monthly" },
+          { label: "Daily", value: "daily" },
+        ]}
+        onSelectOption={(option) => console.log("Selected:", option)}
+      />
+
+      <ResponsiveContainer className="mt-5" width="100%" height="70%">
         <LineChart data={formattedData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" tick={{ fontSize: 12 }} />
-          <YAxis domain={[0, 3]} tick={{ fontSize: 12 }} />
-          <Tooltip />
-          <Line type="monotone" dataKey="value" stroke="#FF0000" strokeWidth={2} dot={false} isAnimationActive={false} />
+          <defs>
+            <linearGradient id="lineFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#ef4444" stopOpacity={0.4} />
+              <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+
+          <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+          <XAxis dataKey="time" tick={{ fontSize: 12, fill: '#ccc' }} />
+          <YAxis domain={[0, 3.5]} tick={{ fontSize: 12, fill: '#ccc' }} />
+
+          <Tooltip content={<CustomTooltip />} />
+
+          {/* Area for fill under the line */}
+          <Area
+            type="monotone"
+            dataKey="value"
+            stroke="none"
+            fill="url(#lineFill)"
+          />
+
+          {/* Actual red line */}
+          <Line
+            type="monotone"
+            dataKey="value"
+            stroke="#ef4444"
+            strokeWidth={2}
+            dot={{ r: 4, stroke: '#ef4444', strokeWidth: 2, fill: '#fff' }}
+            isAnimationActive={false}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>

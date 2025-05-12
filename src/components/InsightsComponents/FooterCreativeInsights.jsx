@@ -71,7 +71,7 @@ function FooterCreativeInsights() {
       <div className="w-full flex justify-center mt-6">
         <button
           className="bg-redColor px-8 py-2 text-sm text-white rounded-md shadow-md"
-          onClick={() => navigate("/seebrands")}
+          onClick={() => navigate("/insights/competitorinsights")}
         >
           Generate the Creative Insights Report
         </button>

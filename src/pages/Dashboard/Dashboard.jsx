@@ -1,13 +1,12 @@
 // Dashboard.jsx
 
 import React from "react";
-import BelowHeader from "../components/BelowHeader";
-import AnalyticsCard from "../components/DashboardComponents/AnalyticsCard";
-import FlowChart from "../components/DashboardComponents/FlowChart";
-import Chart from "../components/DashboardComponents/Chart";
-import Tables from "../components/DashboardComponents/Tables";
+import BelowHeader from "../../components/BelowHeader";
+import AnalyticsCard from "../../components/DashboardComponents/AnalyticsCard";
+import Chart from "../../components/DashboardComponents/Chart";
+import Tables from "../../components/DashboardComponents/Tables";
 import { FiFilter } from "react-icons/fi";
-import Header from "../components/CommonComponents/Header";
+import Header from "../../components/CommonComponents/Header";
 
 const Dashboard = () => {
   return (

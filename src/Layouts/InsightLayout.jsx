@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../CommonComponents/Header";
+import Header from "../components/CommonComponents/Header";
 import { Outlet } from "react-router-dom";
 
 const InsightsLayout = () => {
