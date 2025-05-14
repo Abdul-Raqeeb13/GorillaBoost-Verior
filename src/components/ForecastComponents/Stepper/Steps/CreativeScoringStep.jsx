@@ -4,10 +4,10 @@ import BelowHeader from '../../../Compaigns/BelowHeader';
 import Card from './CreativeScoreAIStepCard';
 function StepCreativeScoring() {
   return (
-        <div className=" min-h-screen flex flex-col flex-grow bg-commonBgColor">
+        <div className=" min-h-screen flex flex-col flex-grow my-8 bg-commonBgColor">
 <BelowHeader
-  title="Inspiration Bank"
-  subtitle="Discover ad ideas for your next campaign"
+  title="List Of Creative Scoring  Ai"
+  subtitle="A Comprehensive Overview of Your Creative scoring"
 />
 <Card/>
 

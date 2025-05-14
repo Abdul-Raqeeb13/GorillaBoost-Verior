@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import StepsHeader from "./StepsHeader";
+import StepsHeader from "../../../CommonComponents/StepsHeader";
 import { FiUploadCloud } from "react-icons/fi";
 
 const Step4 = ({ onNext }) => {
@@ -17,7 +17,7 @@ const Step4 = ({ onNext }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between min-h-screen text-white px-6 py-8">
+    <div className="flex flex-col justify-between text-white">
       <div>
         <StepsHeader
           image="../assets/stepperi1.svg"
@@ -25,16 +25,16 @@ const Step4 = ({ onNext }) => {
           subtitle="Upload your ad image or video to continue evaluation"
         />
 
-        <div className="flex flex-wrap gap-6 mt-8">
+        <div className="flex flex-wrap gap-6 mt-8 mb-10">
           {/* Upload Card */}
           <div
             onClick={handleCardClick}
-            className="cursor-pointer w-full h-80 bg-extraLightGray rounded-lg flex flex-col items-center justify-center text-center"
+            className="cursor-pointer w-full h-96 p-20 bg-extraLightGray rounded-lg flex flex-col items-center justify-around text-center"
           >
-            <FiUploadCloud className="text-4xl mb-4 text-blue-400" />
-            <h3 className="text-lg font-semibold mb-2">Upload File</h3>
-            <p className="text-sm text-gray-400">
-              Tap to open gallery and choose your ad creative
+            <img src="/assets/imageIcon.svg" alt="" />
+            <h3 className="text-24 font-mediun">Upload your images</h3>
+            <p className="text-14 font-medium">
+              Add Example Creatives
             </p>
             <input
               type="file"
@@ -47,11 +47,11 @@ const Step4 = ({ onNext }) => {
         </div>
       </div>
 
-          {/* Button positioned at the bottom-right */}
-      <div className="flex justify-end"> {/* Flex container to align the button */}
+      {/* Button positioned at the bottom-right */}
+      <div className="mt-20 flex justify-end "> {/* Push the button to the bottom */}
         <button
           onClick={onNext}
-          className="bg-redColor px-4 py-2 mt-2 rounded text-white"
+          className="bg-redColor w-32 h-12 rounded-md font-bold text-20 text-white"
         >
           Next
         </button>

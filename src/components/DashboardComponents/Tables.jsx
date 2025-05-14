@@ -5,12 +5,12 @@ const Tables = () => {
   return (
     <div className="w-full ">
       {/* Flex container for responsive layout */}
-      <div className="flex flex-wrap gap-4 overflow-hidden mt-5">
+    <div className="flex flex-col lg:flex-row gap-4 mt-5">
         {/* Ensure each table takes full width on small screens and 48% width on larger screens */}
-        <div className="w-full sm:w-[48%]">
+        <div className="w-full lg:w-1/2">
           <Table1 />
         </div>
-        <div className="w-full sm:w-[48%]">
+        <div className="w-full lg:w-1/2">
           <Table2 />
         </div>
       </div>

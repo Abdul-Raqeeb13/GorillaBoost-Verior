@@ -13,7 +13,7 @@ function FooterCompetitorInsights() {
         <div className="p-2 rounded-full bg-extraLightGray">
           <FiGlobe className="w-6 h-6 text-white" />
         </div>
-        <Typography className="text-base lg:text-lg font-semibold text-white">
+        <Typography className="text-18 font-bold text-white">
           Extract Data From Web
         </Typography>
       </div>
@@ -34,11 +34,11 @@ function FooterCompetitorInsights() {
         <Button
           text="Get Competitor Insights"
           color="bg-redColor"
-          px="px-2"
-          py="py-2"
+          px="px-5"
+          py="py-3"
           fontSize="text-base"
           width="w-full lg:w-auto"
-          height="h-10"
+          height=""
           rounded="rounded-md"
           textColor="text-white"
           shadow="shadow-lg"

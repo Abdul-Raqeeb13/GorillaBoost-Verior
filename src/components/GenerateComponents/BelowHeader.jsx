@@ -10,14 +10,14 @@ const Header = () => {
       <div className="flex items-center ">
        
         <div>
-          <p className="text-lg sm:text-md font-semibold">AI-Powered Asset Library </p>
-            <p className="text-sm text-gray-400">Choose the Type of Asset You Want to Create with AI</p>
+          <p className="text-lg sm:text-md font-semibold text-20">AI-Powered Asset Library </p>
+            <p className="text-12 font-medium text-gray-400">Choose the Type of Asset You Want to Create with AI</p>
         </div>
       </div>
 
       {/* Right Section */}
 
-        <button className="w-full flex flex-row gap-2 items-center sm:w-auto px-4 py-2 bg-redColor text-white rounded-md text-sm">
+        <button className="w-full flex flex-row gap-2 items-center sm:w-auto px-4 py-2 bg-redColor text-white rounded-md text-18 font-semibold">
                 <img src="/assets/BtnIcon.svg" alt="" srcset="" />
           Generate Now
         </button>

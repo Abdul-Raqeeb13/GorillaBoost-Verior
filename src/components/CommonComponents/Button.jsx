@@ -20,7 +20,7 @@ const DynamicButton = ({
       className={`
         ${color} ${px} ${py} ${fontSize}
         ${width} ${height} ${rounded}
-        ${textColor} ${shadow} 
+        ${textColor} ${shadow} font-bold text-14
         hover:opacity-90 transition duration-200
         ${additionalClasses}
       `}

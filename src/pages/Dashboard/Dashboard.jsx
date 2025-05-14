@@ -14,15 +14,15 @@ const Dashboard = () => {
 
       <Header
         title="Overview"
-        subtitle="Welcome to your dashboard"
+        subtitle=""
         profileImage="/assets/user.jpg"
         onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} // pass the toggle function
       />
 
       {/* Below Header */}
       <BelowHeader
-        title="Job Listings"
-        subtitle="Filter based on your preferences"
+        title="Analytics"
+        subtitle="This information is from October 30 - November 30"
         btnName="Filter"
         icon={<FiFilter />}
         options={[

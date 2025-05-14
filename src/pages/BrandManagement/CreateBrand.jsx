@@ -9,8 +9,8 @@ const BrandManagement = () => {
     <div className="bg-commonBgColor min-h-screen p-7 flex flex-col">
 
       <Header
-        title="Overview"
-        subtitle="Welcome to your dashboard"
+        title="Brand Management"
+        subtitle="Manage and customize your brand in one place."
         profileImage="/assets/user.jpg"
         onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} // pass the toggle function
       />
@@ -24,7 +24,7 @@ const BrandManagement = () => {
 
       <BelowHeader2 />
 
-      <div className="my-5 mx-4 text-white text-sm">
+      <div className="my-5 mx-4 text-white text-14 font-medium">
         <p>Let’s Add Your Brand – From Your Website or by Hand</p>
       </div>
 

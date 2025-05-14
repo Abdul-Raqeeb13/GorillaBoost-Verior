@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/CommonComponents/Header";
-import BelowHeader from "../../components/InsightsComponents/BelowHeader";
+import BelowHeader from "../../components/CommonComponents/IconTextBelowHeader";
 import TextImgCard from "../../components/InsightsComponents/TextImgCard";
 import { useNavigate } from "react-router-dom";
 const Insights = () => {

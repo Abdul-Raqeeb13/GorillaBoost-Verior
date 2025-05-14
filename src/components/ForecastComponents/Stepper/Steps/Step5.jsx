@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import StepsHeader from "./StepsHeader";
+import StepsHeader from "../../../CommonComponents/StepsHeader";
 import { Switch } from "@material-tailwind/react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Step5 = () => {
   const [showHeatmap, setShowHeatmap] = useState(true);
   const [analyze, setAnalyze] = useState(true);
   const [editMode, setEditMode] = useState(false);
   const nav = useNavigate();
+
   return (
-    <div className="min-h-screen bg-lightGray text-white">
+    <div className="bg-lightGray text-white flex flex-col h-full">
       {/* Header */}
       <StepsHeader
         image="../assets/stepperi1.svg"
@@ -17,17 +18,17 @@ const Step5 = () => {
         subtitle="Select an Ad Creative to Evaluate and Score"
       />
 
-      <div className="flex flex-col md:flex-row gap-3">
+      <div className="flex flex-col md:flex-row gap-8 flex-grow">
         {/* Heatmap Section */}
-        <div className="md:w-1/2 w-full rounded-2xl shadow-lg flex flex-col justify-between">
+        <div className="md:w-1/2 w-full rounded-2xl flex flex-col ">
           <img
             src="/assets/images/formCover.jpeg"
             alt="Heatmap"
             className="rounded-lg w-full h-96 object-cover"
           />
 
-          <div className="mt-4 flex items-center justify-between p-4 bg-extraLightGray rounded-lg">
-            <div className="flex gap-6 items-center ">
+          <div className="mt-4 flex items-center justify-around p-4 bg-extraLightGray rounded-lg">
+            <div className="flex gap-12 items-center ">
               <div className="flex items-center gap-2 ">
                 <span className="text-sm">Heatmap</span>
 
@@ -35,7 +36,6 @@ const Step5 = () => {
                   color="red"
                   checked={showHeatmap}
                   onChange={() => setShowHeatmap(!showHeatmap)}
-                  crossOrigin={undefined}
                 />
               </div>
               <div className="flex items-center gap-2">
@@ -45,15 +45,11 @@ const Step5 = () => {
                   color="yellow"
                   checked={analyze}
                   onChange={() => setAnalyze(!analyze)}
-                  crossOrigin={undefined}
                 />
               </div>
             </div>
 
-            <button 
-               onClick={() => setEditMode(!editMode)}
-
-            >
+            <button onClick={() => setEditMode(!editMode)}>
               {editMode ? (
                 "Editing..."
               ) : (
@@ -61,20 +57,19 @@ const Step5 = () => {
                   Edit <img src="/assets/editicon.svg" alt="edit" className="w-4 h-4" />
                 </span>
               )}
-
             </button>
           </div>
         </div>
 
         {/* Score and Suggestions */}
         <div className="md:w-1/2 w-full">
-          <div className="bg-extraLightGray rounded-lg p-3">
-            <div className="text-xl font-semibold ">Performance Score</div>
-            <div className="text-sm font-semibold my-2">Score Point</div>
-            <div className="text-5xl font-bold  ">44%</div>
+          <div className="bg-extraLightGray rounded-lg p-5">
+            <div className="text-20 font-medium">Performance Score</div>
+            <div className="text-12 font-medium my-2">Score Point</div>
+            <div className="text-40 font-semibold">44%</div>
           </div>
 
-          <p className="text-sm font-semibold my-4">
+          <p className="text-14 font-medium my-4">
             Performance-Focused AI Recommendations
           </p>
           <ul className="space-y-3">
@@ -89,19 +84,19 @@ const Step5 = () => {
                 key={index}
                 className="flex justify-between items-center bg-extraLightGray px-4 py-3 rounded-lg"
               >
-                <span className="text-sm">{item.text}</span>
-                <span className="text-red-400 text-sm">
-                  {item.score} Score Point
-                </span>
+                <span className="text-14 font-bold">{item.text}</span>
+                <span className="text-redColor font-bold text-14">{item.score} Score Point</span>
               </li>
             ))}
           </ul>
         </div>
       </div>
-            <div className="flex justify-end mt-2"> {/* Flex container to align the button */}
+
+      {/* Button positioned at the bottom-right */}
+      <div className="mt-5 flex justify-end "> {/* Push the button to the bottom */}
         <button
-          onClick={()=>{nav('/forecast/create')}}
-          className="bg-redColor px-4 py-2 rounded-md text-white"
+          onClick={() => nav("/forecast/create")}
+          className="bg-redColor w-32 h-12 rounded-md font-bold text-20 text-white"
         >
           Next
         </button>
@@ -111,3 +106,4 @@ const Step5 = () => {
 };
 
 export default Step5;
+// /forecast/create

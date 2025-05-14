@@ -1,5 +1,5 @@
 import React from "react";
-import StepsHeader from "./StepsHeader";
+import StepsHeader from "../../../CommonComponents/StepsHeader";
 import StepsCard from "./StepsCard";
 
 const Step2 = ({ onNext }) => {
@@ -7,48 +7,49 @@ const Step2 = ({ onNext }) => {
   const cardData = [
     {
       id: 1,
-      image: "../assets/meta.svg",
-      title: "Static Ad",
-      subtitle: "Single-image ads without any movement."
+      image: "../assets/MetaLarge.svg",
+      title: "Meta",
+      subtitle: "Score your Facebook and Instagram Ads."
     },
     {
       id: 2,
-      image: "../assets/googleAds.svg",
-      title: "Static Ad",
+      image: "../assets/goodleAdsLarge.svg",
+      title: "Meta",
       subtitle: "Single-image ads without any movement."
     },
     {
       id: 3,
-      image: "../assets/meta.svg",
-      title: "Static Ad",
+      image: "../assets/MetaLarge.svg",
+      title: "Meta",
       subtitle: "Single-image ads without any movement."
     },
     {
       id: 4,
-      image: "../assets/googleAds.svg",
-      title: "Static Ad",
+      image: "../assets/MetaLarge.svg",
+      title: "Meta",
       subtitle: "Single-image ads without any movement."
     },
     {
       id: 5,
-      image: "../assets/meta.svg",
-      title: "Static Ad",
+      image: "../assets/goodleAdsLarge.svg",
+      title: "Meta",
       subtitle: "Single-image ads without any movement."
     },
     {
       id: 6,
       image: "../assets/googleAds.svg",
-      title: "Static Ad",
+      title: "Meta",
       subtitle: "Single-image ads without any movement."
     },
-      ];
+  ];
 
   return (
-    <div className="flex flex-col justify-between min-h-screen"> {/* Use flex-col and justify-between */}
+    <div className="flex flex-col justify-between"> {/* Full screen height, with flex layout */}
       <div>
-        <StepsHeader image="../assets/stepperi1.svg" title="Select Ad Type to Score" subtitle="Select an Ad Creative to Evaluate and Score" />
+        <StepsHeader image="../assets/stepperi2.svg" title="Select Ad Platform" subtitle="Select the ad platform where the creatives will be advertised." />
         
-        <div className="flex gap-3 flex-wrap">
+        {/* 3 cards per row with gap */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {cardData.map((card) => (
             <StepsCard
               key={card.id}
@@ -60,16 +61,15 @@ const Step2 = ({ onNext }) => {
         </div>
       </div>
 
-      {/* Button positioned at the bottom-right */}
-      <div className="flex justify-end"> {/* Flex container to align the button */}
+      {/* Button at the bottom */}
+      <div className="mt-20 flex justify-end "> {/* Push the button to the bottom */}
         <button
           onClick={onNext}
-          className="bg-redColor px-4 py-2 mt-2 rounded text-white"
+          className="bg-redColor w-32 h-12 rounded-md font-bold text-20 text-white"
         >
           Next
         </button>
       </div>
-      
     </div>
   );
 };

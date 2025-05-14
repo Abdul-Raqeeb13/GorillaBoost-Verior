@@ -1,10 +1,10 @@
 import React from "react";
 import StepIndicator from "./StepperIndicator";
-import BelowHeader from "../../InsightsComponents/BelowHeader";
+import BelowHeader from "../../CommonComponents/IconTextBelowHeader";
 const StepperLayout = ({ steps, activeStep, children }) => {
   return (
     <>
-      <BelowHeader
+        <BelowHeader
         title="Optimize and Analyze Your Brand Strategy"
         subTitle="Unlock Data-Driven Insights for Brand Growth."
         img="/assets/forecast.svg"
@@ -15,7 +15,7 @@ const StepperLayout = ({ steps, activeStep, children }) => {
 
 
         {/* Sidebar Step Indicator */}
-        <div className="w-72 bg-lightGray p-6 rounded-xl">
+        <div className="w-80 bg-lightGray p-4 rounded-xl">
           <StepIndicator steps={steps} activeStep={activeStep} />
         </div>
 

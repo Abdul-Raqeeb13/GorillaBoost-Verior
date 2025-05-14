@@ -8,21 +8,23 @@ const ageGroups = [
 
 export default function AgeDistribution() {
   return (
-    <div className="bg-lightGray text-white p-4 rounded-xl w-full">
+    <div className="bg-lightGray text-white p-4 rounded-xl w-full h-full flex flex-col justify-between">
       <h2 className="text-2xl font-bold my-4">Age</h2>
       <p className="text-sm mb-4">Based On User Feedback</p>
-      {ageGroups.map((group, idx) => (
-        <div key={idx} className="mb-2 flex items-center gap-2">
-  <span className="w-12 text-sm">{group.age}</span>
-  <div className="flex-1 h-3 bg-extraLightGray rounded-full">
-    <div
-      className="h-3 bg-red-500 rounded-full"
-      style={{ width: `${group.value}%` }}
-    ></div>
-  </div>
-</div>
-
-      ))}
+      <div className="flex-grow">
+        {ageGroups.map((group, idx) => (
+          <div key={idx} className="mb-2 flex items-center gap-2">
+            <span className="w-12 text-sm">{group.age}</span>
+            <div className="flex-1 h-3 bg-extraLightGray rounded-full">
+              <div
+                className="h-3 bg-red-500 rounded-full"
+                style={{ width: `${group.value}%` }}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
+

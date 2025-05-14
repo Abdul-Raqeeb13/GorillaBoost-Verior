@@ -5,7 +5,7 @@ import { FiMenu } from "react-icons/fi";
 const Header = ({ title, subtitle, profileImage, onToggleSidebar }) => {
   return (
     <header className="bg-commonBgColor text-white shadow-sm  flex flex-col sm:flex-row sm:justify-between sm:items-center ">
-      
+
       {/* Left Section: Toggle (sm only) + Title */}
       <div className="flex items-center ">
         {/* Sidebar Toggle Button: show on small screens only */}
@@ -17,9 +17,9 @@ const Header = ({ title, subtitle, profileImage, onToggleSidebar }) => {
         </button>
 
         <div>
-          <h2 className="text-lg sm:text-xl font-semibold">{title}</h2>
+          <h2 className=" font-ibm font-semibold text-30">{title}</h2>      
           {subtitle && (
-            <p className="text-sm text-gray-400">{subtitle}</p>
+            <p className="font-normal text-18">{subtitle}</p>
           )}
         </div>
       </div>
@@ -30,9 +30,9 @@ const Header = ({ title, subtitle, profileImage, onToggleSidebar }) => {
           <FaSearch size={14} />
         </button>
 
-        <button className="w-full flex flex-row gap-2 sm:w-auto px-4 py-2 bg-redColor text-white rounded-md text-sm">
-                <img src="/assets/BtnIcon.svg" alt="" srcset="" />
-          
+        <button className="w-full flex flex-row gap-2 sm:w-auto px-4 py-2 bg-redColor text-white rounded-md font-ibm font-semibold text-16.37">
+          <img src="/assets/BtnIcon.svg" alt="" srcset="" />
+
           Generate Now
         </button>
 

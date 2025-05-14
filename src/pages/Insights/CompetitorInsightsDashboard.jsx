@@ -23,8 +23,8 @@ const CompetitorInsightsDashboard = () => {
 
       {/* Below Header */}
       <BelowHeader
-        title="Job Listings"
-        subtitle="Filter based on your preferences"
+        title="Overall Traffic"
+        subtitle="This information is from October 30 - November 30"
         btnName="Filter"
         icon={<FiFilter />}
         options={[
@@ -36,7 +36,7 @@ const CompetitorInsightsDashboard = () => {
       />
 
       <CompetitorDashboardCard />
-       <div className="bg-gray-950 min-h-screen mt-5 grid grid-cols-2 gap-6 text-white">
+<div className="bg-gray-950 min-h-screen mt-5 grid grid-cols-2 gap-6 text-white auto-rows-fr">
       <GenderDistribution />
       <AgeDistribution />
       <SocialMediaUsage />

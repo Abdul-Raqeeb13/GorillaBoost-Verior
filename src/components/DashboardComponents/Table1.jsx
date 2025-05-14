@@ -35,7 +35,7 @@ function Table1() {
   ];
 
   return (
-    <div className="w-full bg-lightGray p-3 rounded-lg shadow-md overflow-hidden">
+    <div className="w-full bg-lightGray p-3 rounded-lg overflow-hidden">
         <BelowHeader
   title="Best Performing ADs"
   subtitle="Top-Performing Ads by Engagement & ROI"
@@ -52,19 +52,19 @@ function Table1() {
 
       {/* Wrapping the table with a container that adjusts without overflow */}
       <div className="w-full max-w-full text-center mt-5">
-        <table className="w-full table-auto text-xs"> {/* Small text size */}
-        <thead className=" text-white uppercase text-sm leading-normal">
+        <table className="w-full table-auto "> {/* Small text size */}
+        <thead className=" text-white text-16 font-bold leading-normal">
             <tr>
-              <th className="py-3 px-6 text-left">Ads</th>
-              <th className="py-3 px-6 text-left">Impressions</th>
-              <th className="py-3 px-6 text-left">Clicks</th>
-              <th className="py-3 px-6 text-left">CTR</th>
-              <th className="py-3 px-6 text-left">Status</th>
+              <th className="py-5 px-6 text-left">Ads</th>
+              <th className="py-5 px-6 text-left">Impressions</th>
+              <th className="py-5 px-6 text-left">Clicks</th>
+              <th className="py-5 px-6 text-left">CTR</th>
+              <th className="py-5 px-6 text-left">Status</th>
             </tr>
           </thead>
-          <tbody className="text-white text-xs">
+          <tbody className="text-white">
             {data.map((ad) => (
-              <tr key={ad.id} className="even:bg-extraLightGray odd:bg-lightGray">
+              <tr key={ad.id} className="even:bg-extraLightGray odd:bg-lightGray font-medium text-16">
                 <td className="p-2 flex items-center gap-2">
                   <img src={ad.imgUrl} alt={ad.adName} className="w-8 h-8 rounded-lg border-b border-blue-gray-50" />
                   {ad.adName}

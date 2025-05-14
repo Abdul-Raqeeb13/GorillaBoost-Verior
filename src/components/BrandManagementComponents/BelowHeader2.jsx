@@ -11,7 +11,7 @@ function BelowHeader2() {
         <div className="p-2 rounded-full bg-extraLightGray">
           <FiGlobe className="w-6 h-6 text-white" />
         </div>
-        <Typography className="text-base lg:text-lg font-semibold text-white">
+        <Typography className=" font-bold text-17 text-white">
           Extract Data From Web
         </Typography>
       </div>
@@ -32,11 +32,11 @@ function BelowHeader2() {
         <Button
           text="Input Brand"
           color="bg-redColor"
-          px="px-6"
-          py="py-2"
+          px="px-7"
+          py="py-4"
           fontSize="text-base"
           width="w-full lg:w-auto"
-          height="h-10"
+          height=""
           rounded="rounded-md"
           textColor="text-white"
           shadow="shadow-lg"

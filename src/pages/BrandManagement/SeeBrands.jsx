@@ -8,8 +8,8 @@ const BrandManagement2 = () => {
   return (
     <div className="min-h-screen bg-commonBgColor p-7">
       <Header
-        title="Overview"
-        subtitle="Welcome to your dashboard"
+        title="Brand Management"
+        subtitle="Manage and customize your brand in one place."
         profileImage="/assets/user.jpg"
         onToggleSidebar={() => setIsSidebarOpen(prev => !prev)} // pass the toggle function
       />

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const cardData = [
-  { id: 1, description: "Add Brand Name With Description", image: "/assets/Overlay0.svg" },
+  { id: 1, description: "Add Your Brand Name With Description", image: "/assets/Overlay0.svg" },
   { id: 2, description: "Add A Logo To Represent Your Brand", image: "/assets/Overlay (1).svg" },
   { id: 3, description: "Add your Secondary Brand Logo", image: "/assets/Overlay (2).svg" },
   { id: 4, description: "Add Color Representing Your Brand", image: "/assets/Overlay (3).svg" },
@@ -28,20 +28,16 @@ function BMCard() {
           ...prev,
           [id]: [...(prev[id] || []), input.trim()],
         }));
-        setInput("");
-        setActiveCard(null);
       } else if (id === 4) {
         setColorTags(prev => ({
           ...prev,
           [id]: [...(prev[id] || []), { name: input.trim(), code: `#${input.trim().toLowerCase()}` }],
         }));
-        setInput("");
-        setActiveCard(null);
       } else {
         setCardValues(prev => ({ ...prev, [id]: input.trim() }));
-        setInput("");
-        setActiveCard(null);
       }
+      setInput("");
+      setActiveCard(null);
     }
   };
 
@@ -75,150 +71,148 @@ function BMCard() {
   };
 
   return (
-    <div className="flex flex-wrap w-full bg-lightGray">
+    <div className="flex flex-wrap bg-lightGray">
       {cardData.map((card, index) => {
         const cardWidthClass =
           index < 4 ? "w-full sm:w-1/2 md:w-1/3 lg:w-1/4" : "w-full sm:w-1/2 md:w-1/3";
 
         return (
-          <div key={card.id} className={`${cardWidthClass} bg-commonBgColor py-5 px-2`}>
-            <div className="bg-lightGray rounded-xl shadow-md p-6 flex flex-col items-center text-center h-full">
-              {card.id === 2 || card.id === 3 ? (
-                // Image cards
-                <>
-                  {selectedImage[card.id] ? (
-                    <>
+          <div key={card.id} className={`${cardWidthClass} bg-commonBgColor py-3 px-3`}>
+            <div className="bg-lightGray rounded-xl shadow-md p-4 pt-0 px-6 flex flex-col justify-between h-full">
+              <div className="flex flex-col items-center text-center">
+                {card.id === 2 || card.id === 3 ? (
+                  <>
+                    {selectedImage[card.id] ? (
                       <div className="w-full">
                         <img
                           src={selectedImage[card.id]}
                           alt="Uploaded"
-                          className="w-full h-40 rounded-md object-contain"
+                          className="w-full h-32 rounded-md object-contain"
                         />
                       </div>
-                      <button
-                        className="bg-extraLightGray px-10 py-2 text-sm w-full text-red-500 rounded-md mt-4"
-                        onClick={() => document.getElementById(`file-input-${card.id}`).click()}
-                      >
-                        + Add
-                      </button>
-                      <input
-                        id={`file-input-${card.id}`}
-                        type="file"
-                        className="hidden text-white bg-extraLightGray"
-                        accept="image/*"
-                        onChange={(e) => handleFileChange(e, card.id)}
-                      />
-                    </>
-                  ) : (
-                    <>
+                    ) : (
+                      <>
+                        <div className="p-5 text-cen">
+                          <img
+                            src={card.image}
+                            alt="Card Icon"
+                            className="w-12 h-12 object-contain"
+                          />
+                        </div>
+                        <p className="text-white font-ibm text-17 font-medium">{card.description}</p>
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {card.id === 4 && colorTags[card.id]?.length > 0 ? null : (
                       <div className="p-5">
-                        <img
-                          src={card.image}
-                          alt="Card Icon"
-                          className="w-12 h-12 object-contain mb-4"
-                        />
+                        <img src={card.image} alt="Card Icon" className="w-12 h-12 object-cover" />
                       </div>
-                      <p className="text-white mb-4">{card.description}</p>
-                      <button
-                        className="bg-extraLightGray px-10 py-2 text-sm w-full text-red-500 rounded-md mt-4"
-                        onClick={() => document.getElementById(`file-input-${card.id}`).click()}
+                    )}
+                    <p className="text-white mb-4 font-ibm text-17 font-medium">{card.description}</p>
+
+                    {activeCard === card.id && card.id === 5 && (
+                      <select
+                        multiple
+                        className="w-full px-4 py-2 mb-2 rounded-md"
+                        onChange={handleSelectChange}
                       >
-                        + Add
-                      </button>
+                        {toneOptions.map(option => (
+                          <option key={option} value={option}>{option}</option>
+                        ))}
+                      </select>
+                    )}
+
+                    {activeCard === card.id && card.id !== 5 && (
                       <input
-                        id={`file-input-${card.id}`}
-                        type="file"
-                        className="hidden text-white bg-extraLightGray"
-                        accept="image/*"
-                        onChange={(e) => handleFileChange(e, card.id)}
+                        type="text"
+                        className="w-full text-white bg-extraLightGray px-4 py-2 mb-2 rounded-md"
+                        placeholder="Type here and press Enter"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) => handleKeyPress(e, card.id)}
                       />
-                    </>
-                  )}
-                </>
-              ) : (
-                // Other content cards
-                <>
-                  {card.id === 4 && colorTags[card.id]?.length > 0 ? null : (
-                    <div className="p-5">
-                      <img src={card.image} alt="Card Icon" className="w-12 h-12 object-cover" />
-                    </div>
-                  )}
-                  <p className="text-white mb-4">{card.description}</p>
+                    )}
 
-                  {activeCard === card.id && card.id === 5 && (
-                    <select
-                      multiple
-                      className="w-full px-4 py-2 mb-2 rounded-md"
-                      onChange={handleSelectChange}
-                    >
-                      {toneOptions.map(option => (
-                        <option key={option} value={option}>{option}</option>
-                      ))}
-                    </select>
-                  )}
+                    {card.id === 5 && selectedOptions.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-2 justify-center">
+                        {selectedOptions.map((option, idx) => (
+                          <span key={idx} className="bg-gray-600 text-white px-2 py-1 rounded-full text-xs">
+                            {option}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                  {activeCard === card.id && card.id !== 5 && (
-                    <input
-                      type="text"
-                      className="w-full text-white bg-extraLightGray px-4 py-2 mb-2 rounded-md"
-                      placeholder="Type here and press Enter"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={(e) => handleKeyPress(e, card.id)}
-                    />
-                  )}
+                    {cardValues[card.id] && typeof cardValues[card.id] === "string" && card.id !== 5 && (
+                      <p className="text-white mb-2 text-17 font-medium">{cardValues[card.id]}</p>
+                    )}
 
-                  {card.id === 5 && selectedOptions.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-2 justify-center">
-                      {selectedOptions.map((option, idx) => (
-                        <span key={idx} className="bg-gray-600 text-white px-2 py-1 rounded-full text-xs">
-                          {option}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {cardValues[card.id] && typeof cardValues[card.id] === "string" && card.id !== 5 && (
-                    <p className="text-white mb-2">{cardValues[card.id]}</p>
-                  )}
-
-                  {card.id === 4 && colorTags[card.id]?.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-2 justify-center">
-                      {colorTags[card.id].map((color, idx) => (
-                        <span
-                          key={idx}
-                          className="bg-redColor text-white px-3 py-2 rounded-md text-xs"
-                        >
-                          {color.name}
+                    {card.id === 4 && colorTags[card.id]?.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-2 justify-center">
+                        {colorTags[card.id].map((color, idx) => (
                           <span
-                            className="text-white cursor-pointer ml-2"
-                            onClick={() => removeTag(card.id, color.name)}
-                          >✖</span>
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                            key={idx}
+                            className="bg-redColor text-white px-3 py-2 rounded-md text-xs"
+                          >
+                            {color.name}
+                            <span
+                              className="text-white cursor-pointer ml-2"
+                              onClick={() => removeTag(card.id, color.name)}
+                            >✖</span>
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                  {(card.id === 6 || card.id === 7) && tags[card.id]?.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-2 justify-center">
-                      {tags[card.id].map((tag, idx) => (
-                        <span key={idx} className="bg-gray-600 text-white px-2 py-1 rounded-full text-xs">
-                          {tag} <span className="text-red-500 cursor-pointer ml-2" onClick={() => removeTag(card.id, tag)}>✖</span>
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                    {(card.id === 6 || card.id === 7) && tags[card.id]?.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-2 justify-center">
+                        {tags[card.id].map((tag, idx) => (
+                          <span key={idx} className="bg-gray-600 text-white px-2 py-1 rounded-full text-xs">
+                            {tag}
+                            <span className="text-red-500 cursor-pointer ml-2" onClick={() => removeTag(card.id, tag)}>✖</span>
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
 
-                  {activeCard !== card.id && (card.id !== 5 || selectedOptions.length === 0) && (
+              {/* Footer Button */}
+              <div className="mt-4">
+                {(card.id === 2 || card.id === 3) ? (
+                  <>
                     <button
-                      className="bg-extraLightGray px-10 py-2 text-sm w-full text-red-500 rounded-md mt-4"
+                      className="bg-extraLightGray px-10 py-2 w-full text-red-500 rounded-md font-ibm font-semibold text-14"
+                      onClick={() => document.getElementById(`file-input-${card.id}`).click()}
+                    >
+                      + Add
+                    </button>
+                    <input
+                      id={`file-input-${card.id}`}
+                      type="file"
+                      className="hidden"
+                      accept="image/*"
+                      onChange={(e) => handleFileChange(e, card.id)}
+                    />
+                  </>
+                ) : (
+                  activeCard !== card.id &&
+                  (
+                    (card.id === 1 && !cardValues[card.id]) || // For Card 1: show only if value not set
+                    (card.id !== 1 && (card.id !== 5 || selectedOptions.length === 0))
+                  ) && (
+                    <button
+                      className="bg-extraLightGray px-10 py-2 w-full text-red-500 rounded-md font-ibm font-semibold text-14"
                       onClick={() => setActiveCard(card.id)}
                     >
                       + Add
                     </button>
-                  )}
-                </>
-              )}
+                  )
+                )}
+              </div>
             </div>
           </div>
         );

@@ -10,8 +10,7 @@ import {
 } from "@material-tailwind/react";
 
 function Cards() {
-
-    const nav = useNavigate()
+  const nav = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [projects, setProjects] = useState([]);
   const [form, setForm] = useState({
@@ -33,7 +32,6 @@ function Cards() {
     if (form.title && form.subtitle && form.image) {
       const newEntry = { ...form };
       setProjects([...projects, newEntry]);
-      // Reset form
       setForm({
         image: '',
         title: '',
@@ -45,33 +43,34 @@ function Cards() {
   };
 
   return (
-    <div className="mt-6 space-y-10">
+    <div className="mt-6 ">
       {/* Photo Ads Row (includes Create button) */}
       <div>
-        <h2 className="text-xl font-bold text-white mb-4">Photo Ads</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {/* Create Photo Ad */}
+          {/* Create Photo Ad Card */}
           <div
-            className="flex flex-col items-center justify-center cursor-pointer  bg-lightGray p-5 text-white text-center"
+            className="flex flex-col items-center justify-center cursor-pointer bg-lightGray text-white text-center w-full h-[300px]  px-5 rounded-lg"
             onClick={() => setIsOpen(true)}
           >
-            <img src="/assets/addicon.png" className="w-24 h-24" alt="Add" />
-            <h3 className="text-lg font-semibold mt-2">Create Photo Ad</h3>
-            <p className="text-sm text-gray-400">Start a new photo ad</p>
+            <img src="/assets/addicon.png" className="w-32 h-32" alt="Add" />
+            <h3 className="text-24 font-semibold mt-2">Score Creatives</h3>
+            <p className="text-14 font-medium text-paraTextColor">Evaluate your ad creatives now and unlock insights to boost performance.</p>
           </div>
 
           {/* Render Photo Cards */}
           {projects.map((proj, idx) => (
-            <div key={idx} className="bg-lightGray rounded-lg flex flex-col">
+            <div key={idx} className="bg-lightGray rounded-lg flex flex-col w-full h-[300px] overflow-hidden">
               <img
                 src={proj.image}
                 alt={proj.title}
-                className="w-full h-40 object-cover rounded-tl-lg rounded-tr-lg"
+                className="w-full h-[180px] object-cover rounded-tl-lg rounded-tr-lg"
               />
-              <div className="p-4 text-white">
-                <h2 className="text-lg font-semibold break-words">{proj.title}</h2>
-                <p className="text-sm mt-3 text-paraTextColor break-words">{proj.subtitle}</p>
-                <p className="text-xs text-gray-400 mt-2">{proj.date}</p>
+              <div className="p-4 text-white flex-1 flex flex-col justify-between">
+                <div>
+                  <h2 className="text-20 font-semibold break-words">{proj.title}</h2>
+                  <p className="text-14 font-medium mt-3 text-paraTextColor break-words">{proj.subtitle}</p>
+                </div>
+                <p className="text-14 font-mediun mt-3">{proj.date}</p>
               </div>
             </div>
           ))}
@@ -112,9 +111,14 @@ function Cards() {
           <Button variant="gradient" color="blue" onClick={handleCreate}>
             Create
           </Button>
-
-
-         <Button variant="gradient" className='ml-1' color="red" onClick={()=>{nav("/forecast/compliancechecker")}}>
+          <Button
+            variant="gradient"
+            className="ml-1"
+            color="red"
+            onClick={() => {
+              nav("/forecast/compliancechecker");
+            }}
+          >
             Move to next page
           </Button>
         </DialogFooter>

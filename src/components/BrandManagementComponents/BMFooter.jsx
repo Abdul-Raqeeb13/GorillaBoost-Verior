@@ -16,14 +16,14 @@ function BMFooter() {
         </div>
 
         {/* Heading */}
-        <Typography className="text-sm font-semibold text-white whitespace-nowrap">
+        <Typography className="text-sm font-medium text-17 text-white whitespace-nowrap">
           Set Up More Options
         </Typography>
 
         {/* Submit Button */}
         <div className="flex items-center ml-auto">
           <button
-            className="bg-commonBGColor px-10 py-2 text-sm text-red-500 rounded-md"
+            className=" px-10 py-2 text-redColor font-semibold text-17 rounded-md"
             onClick={() => alert('Clicked + Add')}
           >
             + Add
@@ -34,7 +34,7 @@ function BMFooter() {
       {/* New button aligned to bottom right */}
       <div className="w-full flex justify-end my-4">
         <button
-          className="bg-redColor px-8 py-2 text-sm text-white rounded-md shadow-md"
+          className="bg-redColor px-8 py-2 text-17 font-semibold text-white rounded-md shadow-md"
            onClick={() => navigate("/seebrands")}
         >
           Create Brand

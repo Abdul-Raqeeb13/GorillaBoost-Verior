@@ -1,13 +1,14 @@
 import React from 'react'
-import BelowHeader from "../../components/InsightsComponents/BelowHeader";
+import BelowHeader from "../../components/CommonComponents/IconTextBelowHeader";
 import InspirationBelowHeader from "../../components/InsightsComponents/InspirationBankBelowHeader";
 import InspirationBankMainContent from '../../components/InsightsComponents/InspirationBankMainContent';
 function InspirationBank() {
   return (
     <>
     <BelowHeader
-                title="Presenting Competitor Insights "
-                subTitle="See insights from your competitors’ websites."
+                title="Inspiration Bank "
+                subTitle="Just one click away from your next breakthrough ad idea.."
+                img="/assets/inspirationicon.svg"
             />
 <InspirationBelowHeader/>
 <InspirationBankMainContent/>

@@ -32,10 +32,10 @@ import React from 'react';
 const TextImgCard = ({ image, title, subtitle }) => {
   return (
     <div className="bg-lightGray rounded-lg shadow overflow-hidden  sm:basis-[48%] md:basis-[31%] lg:basis-[23%]">
-      <img src={image} alt={title} className="w-full object-cover" />
-      <div className="p-4 text-white">
-        <h2 className="text-lg font-semibold">{title}</h2>
-        <p className="text-sm mt-3 text-paraTextColor">{subtitle}</p>
+      <img src={image} alt={title} className="w-full  object-cover" />
+      <div className="py-4 px-3 text-white">
+        <h2 className="text-24 font-semibold ">{title}</h2>
+        <p className="text-18 font-medium mt-2 text-paraTextColor">{subtitle}</p>
       </div>
     </div>
   );

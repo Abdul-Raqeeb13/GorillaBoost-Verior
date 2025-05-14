@@ -38,15 +38,15 @@ const CompetitorDashboardCard = () => {
 const Card = ({ title, value, trend, icon, color, week }) => {
   return (
     <div className="w-full  md:w-[48%] lg:w-[32.2%] h-[177px] rounded-2xl p-5 bg-lightGray flex flex-col justify-between shadow-xl transition-transform hover:scale-105 text-white">
-      <span className="text-sm py-2 px-3 rounded bg-extraLightGray inline-block w-fit">{title}</span>
+      <span className="text-14 font-semibold py-2 px-3 rounded bg-extraLightGray inline-block w-fit">{title}</span>
 
-      <div className="text-3xl font-bold">{value}</div>
+      <div className="text-40 font-medium ">{value}</div>
 
       {trend && (
-        <div className={`text-sm flex items-center ${color}`}>
-          {icon && <span className="mr-1">{icon}</span>}
+        <div className={`text-sm flex items-center font-mediun text-14 ${color}`}>
+          {icon && <span className="mr-1 ">{icon}</span>}
           <span>{trend}</span>
-          <span className="ms-2 text-gray-300">{week}</span>
+          <span className="ms-2 text-paraTextColor">{week}</span>
         </div>
       )}
     </div>

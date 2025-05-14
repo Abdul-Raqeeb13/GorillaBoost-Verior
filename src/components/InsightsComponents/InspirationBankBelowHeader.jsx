@@ -10,8 +10,8 @@ const InspirationBelowHeader = () => {
       <div className="flex items-center ">
 
         <div>
-          <h2 className="text-lg sm:text-xl font-semibold">List of brands</h2>
-            <p className="text-sm text-gray-400">View your projects and start new ones within the chosen brand</p>
+          <h2 className="text-20 font-semibold">List of brands</h2>
+            <p className="text-12 font-medium">View your projects and start new ones within the chosen brand</p>
         </div>
       </div>
 

@@ -5,8 +5,8 @@
     subtitle,
     btnName = "Filter",
     color = "bg-cardColor",
-    px = "px-0",
-    py = "py-0",
+    px = "",
+    py = "",
     icon, // JSX icon
     options = [], // array of { label, value }
     onSelectOption = () => {} // callback
@@ -31,8 +31,8 @@
       >
         {/* Left: Title & Subtitle */}
         <div>
-          <h2 className="text-lg sm:text-xl font-semibold">{title}</h2>
-          {subtitle && <p className="text-sm text-gray-400">{subtitle}</p>}
+          <p className="font-semibold text-24">{title}</p>
+          {subtitle && <p className="text-white font-normal text-14">{subtitle}</p>}
         </div>
 
         {/* Right: Button with Dropdown */}

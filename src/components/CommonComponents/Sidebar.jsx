@@ -65,7 +65,7 @@ function DefaultSidebar({ isExpanded, setIsExpanded }) {
           {isExpanded && <span className="ml-3 text-white text-sm">Menu 4</span>}
         </NavLink>
 
-        <NavLink to="/enhace" className={getLinkClasses}>
+        <NavLink to="/enhance" className={getLinkClasses}>
           <img src="/assets/Vector (5).svg" className="w-5 h-5" alt="Menu 5" />
           {isExpanded && <span className="ml-3 text-white text-sm">Menu 5</span>}
         </NavLink>

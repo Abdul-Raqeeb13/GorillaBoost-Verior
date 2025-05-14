@@ -30,10 +30,10 @@ const features = [
 const InfoBox = () => {
     return (
         <div className="bg-lightGray rounded-xl shadow-md w-full p-5 mx-auto">
-            <h2 className="text-2xl font-bold text-white my-5">
+            <h2 className="text-28 font-semibold text-white">
                 Decode Competitor Moves and Stay Ahead!
             </h2>
-            <p className="text-white text-sm">
+            <p className="text-white text-18 font-normal my-7 mt-3">
                 Discover the strategies fueling your competitors' success. Our Competitor Insights tool uncovers key data on traffic sources, customer acquisition tactics, audience demographics, and more. Leverage these insights to refine your strategy, drive innovation, and stay ahead of the competition.      </p>
 
             {/* Feature Grid */}
@@ -41,8 +41,8 @@ const InfoBox = () => {
                 {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
                         <img src="/assets/TickLogo.svg" alt={`Tick ${index + 1}`} />
-                        <p className="text-white text-sm">
-                            <span className="font-semibold">{feature.title} </span> {feature.text}
+                        <p className="text-white text-14 font-normal">
+                            <span className="font-medium text-14">{feature.title} : </span> {feature.text}
                         </p>
 
                     </div>

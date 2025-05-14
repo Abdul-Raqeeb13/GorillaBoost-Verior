@@ -20,16 +20,16 @@ function FooterCreativeInsights() {
       {/* Main Footer Box */}
       <div className="flex items-center justify-between p-6 gap-4 mt-5 bg-lightGray rounded-lg shadow-md w-full">
         {/* Icon */}
-        <div className="p-2 rounded-full bg-iconBgColor bg-opacity-40">
-          <FiGlobe className="w-6 h-6 text-white" />
+        <div className="p-2 rounded-full bg-extraLightGray ">
+          <img src="/assets/networkicon.svg" alt="" />
         </div>
 
         {/* Text */}
         <div className="flex flex-col">
-          <h2 className="text-base font-semibold text-white">
+          <h2 className="text-24 font-medium text-white">
             Link Your Ad Accounts to Verior for Smart Creative Analysis
           </h2>
-          <p className="text-sm text-gray-300">
+          <p className="text-18 font-medium text-gray-300">
             Use the options below to link your ad accounts and generate your Creative Insights Report.
           </p>
         </div>
@@ -37,7 +37,7 @@ function FooterCreativeInsights() {
         {/* "+ Add" Button */}
         <div className="ml-auto">
           <button
-            className="bg-commonBGColor px-6 py-2 text-sm text-red-500 rounded-md"
+            className="p-3 w-48 bg-extraLightGray text-redColor rounded-md font-semibold text-14"
             onClick={toggleOptions}
           >
             {showOptions ? "× Close" : "+ Add"}
@@ -59,7 +59,7 @@ function FooterCreativeInsights() {
                 </div>
                 <h3 className="text-white text-base">{opt.title}</h3>
               </div>
-              <button className="bg-redColor px-4 py-2 text-white text-sm rounded-md">
+              <button className="bg-redColor px-4 py-4 text-white text-sm rounded-md">
                 {opt.buttonText}
               </button>
             </div>
@@ -70,7 +70,7 @@ function FooterCreativeInsights() {
       {/* "Continue" Button */}
       <div className="w-full flex justify-center mt-6">
         <button
-          className="bg-redColor px-8 py-2 text-sm text-white rounded-md shadow-md"
+          className="bg-redColor px-8 py-4 text-14 font-medium text-white rounded-md shadow-md"
           onClick={() => navigate("/insights/competitorinsights")}
         >
           Generate the Creative Insights Report

@@ -8,8 +8,8 @@ const InsightsLayout = () => {
   return (
     <div className="bg-commonBgColor min-h-screen p-7 flex flex-col">
       <Header
-        title="Overview"
-        subtitle="Welcome to your dashboard"
+        title="Insights"
+        subtitle="Drive Performance and Insights Using Advanced Analytics"
         profileImage="/assets/user.jpg"
         onToggleSidebar={() => setIsSidebarOpen(prev => !prev)}
       />

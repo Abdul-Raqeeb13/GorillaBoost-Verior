@@ -19,7 +19,7 @@ function InspirationBankMainContent() {
           {/* Country */}
           <div>
             {/* <label className="block text-black mb-1">Country</label> */}
-            <select className="w-full p-2 rounded bg-extraLightGray text-white">
+            <select className="w-full p-4 rounded-lg bg-lightGray text-white">
               <option value="">Select Country</option>
               <option value="us">United States</option>
               <option value="uk">United Kingdom</option>
@@ -30,7 +30,7 @@ function InspirationBankMainContent() {
           {/* Industry */}
           <div>
             {/* <label className="block text-black mb-1">Industry</label> */}
-            <select className="w-full p-2 rounded bg-extraLightGray text-white">
+            <select className="w-full p-4 rounded-lg bg-lightGray text-white">
               <option value="">Select Industry</option>
               <option value="tech">Tech</option>
               <option value="fashion">Fashion</option>
@@ -41,7 +41,7 @@ function InspirationBankMainContent() {
           {/* Platform */}
           <div>
             {/* <label className="block text-black mb-1">Platform</label> */}
-            <select className="w-full p-2 rounded bg-extraLightGray text-white">
+            <select className="w-full p-4 rounded-lg bg-lightGray text-white">
               <option value="">Select Platform</option>
               <option value="facebook">Facebook</option>
               <option value="instagram">Instagram</option>
@@ -52,7 +52,7 @@ function InspirationBankMainContent() {
           {/* Types */}
           <div>
             {/* <label className="block text-black mb-1">Types</label> */}
-            <select className="w-full p-2 rounded bg-extraLightGray text-white">
+            <select className="w-full p-4 rounded-lg bg-lightGray text-white">
               <option value="">Select Type</option>
               <option value="banner">Banner</option>
               <option value="video">Video</option>

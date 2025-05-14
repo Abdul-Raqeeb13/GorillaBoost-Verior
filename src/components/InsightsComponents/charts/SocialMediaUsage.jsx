@@ -27,7 +27,7 @@ const ProgressBar = ({ label, value }) => {
 
 function Table2() {
   return (
-    <div className="w-full p-4 bg-lightGray rounded-lg shadow-md overflow-hidden">
+<div className="w-full h-full p-4 bg-lightGray rounded-lg shadow-md overflow-hidden flex flex-col">
       <BelowHeader
   title="Ad Fatigue Trends"
   subtitle="Audience Engagement Decline."

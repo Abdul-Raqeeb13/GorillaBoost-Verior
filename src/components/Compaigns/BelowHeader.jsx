@@ -14,11 +14,11 @@ function BelowHeader({ title, subtitle }) {
 
   return (
     <div className="relative">
-      <header className="bg-commonBgColor text-white mt-10 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+      <header className="bg-commonBgColor text-white  flex flex-col sm:flex-row sm:justify-between sm:items-center my-5">
         {/* Left: Dynamic Title and Subtitle */}
         <div>
-          <h2 className="text-lg sm:text-xl font-semibold">{title}</h2>
-          <p className="text-sm text-gray-400">{subtitle}</p>
+          <h2 className="text-20 sm:text-xl font-semibold">{title}</h2>
+          <p className="text-14 text-paraTextColor my-3">{subtitle}</p>
         </div>
 
         {/* Right Controls */}
@@ -59,10 +59,10 @@ function BelowHeader({ title, subtitle }) {
 
       {/* Fixed Section Title Below Header */}
       <div>
-        <h2 className="text-lg text-white sm:text-xl font-semibold mt-10">
-          Photo Ads
+        <h2 className="text-24 text-white font-semibold">
+          Creative Scoring AI
         </h2>
-        <p className="text-sm text-gray-400">
+        <p className="text-16 font-medium  text-white">
           A Curated Showcase of Your Photo Advertising Campaigns
         </p>
       </div>

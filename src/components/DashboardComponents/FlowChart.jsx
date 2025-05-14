@@ -50,8 +50,8 @@ const FlowChart = () => {
   return (
     <div className="w-full h-96 bg-lightGray p-5 rounded-lg shadow-md">
       <BelowHeader
-        title="Job Listings"
-        subtitle="Filter based on your preferences"
+        title="4.6"
+        subtitle="Overall CTR Perfromance"
         btnName="Monthly"
         icon={<SlCalender />}
         options={[
